@@ -3,14 +3,12 @@ import useTranslation from 'next-translate/useTranslation'
 import NavBar from '../components/NavBar';
 
 const Home = () => {
-  const { t } = useTranslation('common');
 
   return (
     <>
       <NavBar />
       <main className={styles.main}>
-        testing text
-        {t('greeting')}
+        Hello world
       </main>
     </>
   )
