@@ -1,13 +1,16 @@
-import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import useTranslation from 'next-translate/useTranslation'
+import NavBar from '../components/NavBar';
 
 const Home = () => {
+  const { t } = useTranslation('common');
+
   return (
     <>
+      <NavBar />
       <main className={styles.main}>
-        Hello world
+        testing text
+        {t('greeting')}
       </main>
     </>
   )
