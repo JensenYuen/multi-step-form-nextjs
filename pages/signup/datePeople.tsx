@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Router from 'next/router';
 import Overlay from '../../components/Overlay';
 import styles from '../../styles/signup.module.css'
-import { setTimeout } from 'timers';
+import { usePage } from '../../context/page-context';
 
 const DatePeople = () => {
+  const { formInfo } = usePage();
   const dateString = new Date().toISOString().split('T')[0];
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [peopleCount, setPeopleCount] = useState<number>(1);
