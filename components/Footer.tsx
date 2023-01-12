@@ -16,15 +16,14 @@ const Footer = () => {
           <a href="https://github.com/JensenYuen"
               target="_blank"
               rel="noopener noreferrer"
-              className='fs-4 mx-2'
-              style={{ marginRight: '1rem' }}
+              className='mr-1'
             >
               <FontAwesomeIcon icon={faGithub} />
             </a>
             <a href="https://www.linkedin.com/in/jensen-yuen/"
               target="_blank"
               rel="noopener noreferrer"
-              className='fs-4 mx-2'
+              className='mr-1'
             >
               <FontAwesomeIcon icon={faLinkedin} />
             </a>

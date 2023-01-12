@@ -1,8 +1,9 @@
-import styles from '../styles/Home.module.css'
-import Link from 'next/link';
-import Footer from '../components/Footer';
+import React from 'react';
+import Router from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import Footer from '../components/Footer';
+import styles from '../styles/Home.module.css'
 
 const Home = () => {
   const text = {
@@ -14,29 +15,32 @@ const Home = () => {
     linkText: '使ってみませんか'
   }
 
+  const linkTo = () => {
+    Router.push('/signup/datePeople');
+  }
+
   return (
     <>
-      <main className={styles.main}>
-        <div className={styles.container}>
-          <div className={`${styles.leftContent} ${styles.heroBanner}`}>
-            <div className={`${styles.wrapper} ${styles.mb1}`}>
-              <h2 className={styles.mr1}>{text.projName}</h2>
+      <main className='main'>
+        <div className='container'>
+          <div className={`left-content ${styles.heroBanner}`}>
+            <div className='wrapper mb-1'>
+              <h2 className='mr-1'>{text.projName}</h2>
               <a href={text.projLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className='fs-4 mx-2'
-                style={{ marginRight: '1rem' }}
+                className='mr-1'
               >
                 <FontAwesomeIcon icon={faGithub} />
               </a>
             </div>
-            <p className={styles.mb1}>{text.projDescription}</p>
+            <p className='mb-1'>{text.projDescription}</p>
           </div>
-          <div className={styles.rightContent}>
-            <h2 className={styles.mb1}>{text.leftContentTitle}</h2>
-            <p className={styles.mb1}>{text.leftContentSub}</p>
-            <button className={styles.button}>
-              <Link href='/signup/datePeople'>{text.linkText}</Link>
+          <div className='right-content'>
+            <h2 className='mb-1'>{text.leftContentTitle}</h2>
+            <p className='mb-1'>{text.leftContentSub}</p>
+            <button className={styles.button} onClick={() => linkTo()}>
+              {text.linkText}
             </button>
           </div>
         </div>
